@@ -12,12 +12,12 @@ Client = MongoClient("localhost" ,27017)
 db = Client.mydb
 collection = db.Userlogin
 
-for uname in collection.distinct( "userName", {"userName" : user_username} ):
+for uname in collection.distinct( "Username", {"Username" : user_username} ):
     if uname != user_username:
         print("Invalid Inputs !!!")
         
     else:
-        for Pwrod in collection.distinct( "password",{ "userName" : uname } ):
+        for Pwrod in collection.distinct( "Password",{ "Username" : uname }} ):
             if pass1 == Pwrod:
                 print("Login Success")
             else:
